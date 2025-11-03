@@ -275,6 +275,63 @@ function initScrollAnimations() {
     }
   );
 
+  // Marketing Strategy section animations
+  gsap.fromTo('#strategy-title', 
+    { opacity: 0, y: 60, scale: 0.9 },
+    {
+      opacity: 1, y: 0, scale: 1, duration: 1, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: '#estrategia', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#strategy-subtitle', 
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: '#estrategia', start: 'top 75%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#main-objective', 
+    { opacity: 0, scale: 0.9, y: 50 },
+    {
+      opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: '#main-objective', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#tactics-grid', 
+    { opacity: 0, y: 80 },
+    {
+      opacity: 1, y: 0, duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '#tactics-grid', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#advertising-budget', 
+    { opacity: 0, scale: 0.95, y: 60 },
+    {
+      opacity: 1, scale: 1, y: 0, duration: 1, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: '#advertising-budget', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#weekly-timeline', 
+    { opacity: 0, y: 100 },
+    {
+      opacity: 1, y: 0, duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '#weekly-timeline', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
+  gsap.fromTo('#kpis-section', 
+    { opacity: 0, scale: 0.95, y: 80 },
+    {
+      opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: '#kpis-section', start: 'top 80%', toggleActions: 'play none none reverse' }
+    }
+  );
+
   // Final CTA section animations
   gsap.fromTo('#final-cta', 
     { opacity: 0, scale: 0.9, y: 80 },
