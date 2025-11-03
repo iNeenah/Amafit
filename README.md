@@ -109,7 +109,8 @@ npm run build
 4. **Beneficios** - Ventajas científicamente respaldadas
 5. **Testimonios** - Prueba social y calificaciones
 6. **Campaña** - Información de la oferta limitada
-7. **Contacto** - Call-to-action final
+7. **Estrategia de Marketing** - Plan detallado de ejecución
+8. **Contacto** - Call-to-action final
 
 ## 🎬 Animaciones y Efectos
 
@@ -120,12 +121,33 @@ npm run build
 - **Parallax effects** sutiles
 - **Progress bar** de scroll
 
-## 📊 Métricas de Campaña
+## 📊 Estrategia de Marketing Completa
 
-- **KPI Principal**: 30 packs vendidos
-- **Duración**: 31 días (Octubre 2025)
-- **Canales**: WhatsApp (principal), Redes sociales
-- **Presupuesto publicidad**: $36.000 ($2.000/día x 18 días)
+### Objetivo Principal
+- **Meta**: 30 packs vendidos en Octubre 2025
+- **Precio**: $61.900 (ahorro de $18.100)
+- **Canal principal**: WhatsApp
+
+### Tácticas Implementadas
+1. **Contenido de Valor** - 3 piezas educativas (2 Reels + 1 Carrusel)
+2. **Promoción Constante** - 1 historia diaria + 3 estados WhatsApp semanales
+3. **CTA Unificado** - "Enviá 'PACK1' por WhatsApp"
+4. **Upsell Digital** - Protocolo de venta consultiva
+5. **Micro-Influencer** - Marcos Martínez (@genetics.plus)
+6. **Seguimiento Activo** - WhatsApp Business + recordatorios 48hs
+7. **Publicidad Segmentada** - $36.000 ($2.000/día x 18 días)
+
+### Cronograma Semanal
+- **Semana 0**: Preparación y lanzamiento oficial
+- **Semana 1**: Impulso inicial (Meta: 6 packs)
+- **Semana 2**: Prueba social y testimonios (Meta: 14 packs)
+- **Semana 3**: Generación de urgencia + publicidad paga (Meta: 22 packs)
+- **Semana 4**: Cierre de campaña (Meta final: 30 packs)
+
+### KPIs y Control
+- Packs vendidos, consultas WhatsApp, tasa de conversión
+- Herramientas: Google Sheets, Analytics, WhatsApp Business
+- Control semanal cada viernes con plan de contingencia
 
 ## 🤝 Contribución
 
