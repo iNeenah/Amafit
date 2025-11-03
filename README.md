@@ -87,6 +87,20 @@ npm run build
 - `npm run build` - Build de producción
 - `npm run preview` - Preview del build
 
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+1. Conecta tu repositorio de GitHub con Vercel
+2. Vercel detectará automáticamente la configuración de Vite
+3. El deploy se realizará automáticamente en cada push a main
+
+### GitHub Pages
+1. Habilita GitHub Pages en la configuración del repositorio
+2. Selecciona "GitHub Actions" como fuente
+3. El workflow automático se encargará del deploy
+
+**URL de la presentación**: [https://amafit.vercel.app](https://amafit.vercel.app)
+
 ## 📱 Secciones de la Presentación
 
 1. **Hero Section** - Presentación impactante del producto
