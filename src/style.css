@@ -1,0 +1,769 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #db2777);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Card hover effects */
+.persona-card {
+  transition: all 0.3s ease;
+}
+
+.persona-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.lifestyle-card {
+  transition: all 0.3s ease;
+}
+
+.lifestyle-card:hover {
+  transform: scale(1.05);
+}
+
+.lifestyle-card img {
+  transition: all 0.3s ease;
+}
+
+.lifestyle-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Background patterns */
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+/* Navigation scroll effect */
+nav.nav-scrolled {
+  @apply bg-brand-secondary/95 backdrop-blur-lg shadow-lg border-brand-neutral-200;
+}
+
+/* Enhanced card effects */
+.persona-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lifestyle-card:hover {
+  transform: scale(1.05) rotate(1deg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* Gradient animations */
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Enhanced shadow effects */
+.shadow-elegant {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-elegant-lg {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-accent {
+  box-shadow: 0 5px 15px rgba(220, 38, 38, 0.2);
+}
+
+/* Text effects */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+/* Improved button styles */
+button:hover {
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+/* Enhanced image effects */
+img {
+  transition: all 0.3s ease;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #000000;
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
+
+/* Enhanced typography */
+.text-elegant {
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-accent-minimal {
+  color: #DC2626;
+  font-weight: 600;
+}
+
+/* Number styling */
+.number-highlight {
+  font-family: 'Inter', monospace;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Enhanced borders */
+.border-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #FF6B35, #FFD23F) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-7xl {
+    font-size: 3.5rem;
+  }
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #FF6B35;
+  outline-offset: 2px;
+}
+
+/* Improved accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}/* Enhan
+ced interactive elements */
+.interactive-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15);
+}
+
+/* Number emphasis */
+.number-emphasis {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+/* Button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhanced shadows */
+.shadow-brand {
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.15);
+}
+
+.shadow-brand-lg {
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+}
+
+/* Improved focus states */
+*:focus {
+  outline: 3px solid rgba(220, 38, 38, 0.3);
+  outline-offset: 2px;
+}
+
+/* Clean borders */
+.border-clean {
+  border: 2px solid rgba(220, 38, 38, 0.1);
+}
+
+.border-clean:hover {
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* Typography improvements */
+.font-display {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Micro-interactions */
+.micro-bounce:hover {
+  animation: micro-bounce 0.6s ease-in-out;
+}
+
+@keyframes micro-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Smooth scrolling improvements */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-brand-primary {
+    color: #000000;
+  }
+  
+  .bg-brand-primary {
+    background-color: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-glow-pulse {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}/* Cust
+om cursor effects */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* Interactive elements cursor */
+button, .interactive-card, .persona-card, .testimonial-card, .lifestyle-card {
+  cursor: pointer;
+}
+
+/* Hover states for better UX */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Brand-specific utilities */
+.text-hover-accent:hover {
+  color: #DC2626;
+  transition: color 0.3s ease;
+}
+
+.bg-hover-accent:hover {
+  background-color: #DC2626;
+  transition: background-color 0.3s ease;
+}
+
+/* Final polish */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}/* M
+inimal Design System */
+.minimal-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.minimal-card:hover {
+  border-color: #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Typography hierarchy */
+.heading-primary {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #000000;
+}
+
+.heading-secondary {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.text-body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Accent elements - Strategic use of red */
+.accent-dot {
+  width: 8px;
+  height: 8px;
+  background: #DC2626;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.accent-line {
+  width: 40px;
+  height: 3px;
+  background: #DC2626;
+  border-radius: 2px;
+}
+
+/* Button system */
+.btn-primary {
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #DC2626;
+  border-color: #DC2626;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #000000;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Clean spacing system */
+.space-y-elegant > * + * {
+  margin-top: 2rem;
+}
+
+.space-y-tight > * + * {
+  margin-top: 1rem;
+}
+
+/* Refined animations */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 4s ease-in-out infinite;
+}
+
+/* Professional focus states */
+.focus-elegant:focus {
+  outline: 2px solid #000000;
+  outline-offset: 4px;
+}
+
+/* Clean dividers */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E5E5E5, transparent);
+  margin: 3rem 0;
+}
+
+/* Minimal badges */
+.badge-minimal {
+  background: #F5F5F5;
+  color: #000000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge-accent {
+  background: #DC2626;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Clean grid system */
+.grid-elegant {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .heading-primary {
+    font-size: 2.5rem;
+  }
+  
+  .heading-secondary {
+    font-size: 1.75rem;
+  }
+  
+  .text-body {
+    font-size: 1rem;
+  }
+}/* Hi
+gh Contrast & Legibility Improvements */
+.text-high-contrast {
+  color: #000000;
+  font-weight: 600;
+}
+
+.bg-high-contrast {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Ensure text is always readable */
+.text-readable {
+  color: #000000;
+  text-shadow: none;
+}
+
+.text-readable-secondary {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.text-readable-muted {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Clean backgrounds without gradients */
+.bg-clean-white {
+  background-color: #FFFFFF;
+}
+
+.bg-clean-neutral {
+  background-color: #FAFAFA;
+}
+
+.bg-clean-accent {
+  background-color: #DC2626;
+  color: #FFFFFF;
+}
+
+/* Remove any potential gradient artifacts */
+* {
+  background-image: none !important;
+}
+
+/* Override any gradient text */
+.no-gradient-text {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  color: #000000 !important;
+}
+
+/* Ensure buttons have solid backgrounds */
+button {
+  background-image: none !important;
+}
+
+/* Clean card backgrounds */
+.card-clean {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  color: #000000;
+}
+
+/* High contrast mode compatibility */
+@media (prefers-contrast: high) {
+  * {
+    background-image: none !important;
+    text-shadow: none !important;
+  }
+  
+  .text-brand-primary {
+    color: #000000 !important;
+  }
+  
+  .text-brand-accent {
+    color: #DC2626 !important;
+  }
+  
+  .bg-brand-secondary {
+    background-color: #FFFFFF !important;
+  }
+}
